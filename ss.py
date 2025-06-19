@@ -4,10 +4,14 @@ def guessing_game():
     attempts=5
     print("Enter a number between 1 and 10, you have 5 tries!")
     while attempts>0:
-        guess=int(input("Enter a number between 1 and 10:"))
-        if guess>10:
-            print("The number is invalid")
-            break
+        try:
+            guess = int(input("Enter a number between 1 and 10:"))
+        except ValueError:
+            print("Invalid input. Please enter an integer.")
+            continue
+        if guess < 1 or guess > 10:
+            print("The number is invalid, please enter between 1 and 10.")
+            continue
         if guess==secret:
             print("Congrats!, You win")
             break
