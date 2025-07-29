@@ -1,1 +1,1 @@
-print("This is a test")
+print("Content from inside the Docker container")
